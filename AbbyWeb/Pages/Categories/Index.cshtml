@@ -1,6 +1,7 @@
 ﻿@page
 @model AbbyWeb.Pages.Categories.IndexModel
 
+
 <div class="container p*3">
     <div class="row pt-4">
         <div class="col-6">
@@ -8,7 +9,7 @@
         </div>
         <div class="col-6 text-end">
             <a asp-page="create" class="btn btn-primary">
-                <i class="bi bi-pencil-square"></i> &nbsp; Create
+                <i class="bi bi-plus-square"></i> &nbsp; Create
                 </a>
         </div>
     </div>
@@ -22,6 +23,10 @@
                 <th>
                     Display Order
                 </th>
+                <th>
+
+                </th>
+               
             </tr>
         </thead>
         <tbody>
@@ -30,6 +35,17 @@
                 <tr>
                     <td width="50%">@obj.Name</td>
                     <td width="30%">@obj.DisplayOrder</td>
+
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-page="Edit" asp-route-id="@obj.Id" class="btn btn-primary btn btn-primary mx-2">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
+                        <a asp-page="Delete" asp-route-id="@obj.Id" class="btn btn-primary btn btn-danger mx-2">
+                            <i class="bi bi-trash-fill"></i>
+                        </a>
+                        </div>
+                    </td>
                 </tr>
             }
             
